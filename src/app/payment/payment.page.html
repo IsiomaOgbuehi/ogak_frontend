@@ -1,0 +1,54 @@
+
+<ion-menu side="end" menuId="first" content-id="content" class="sidemenu">
+  <ion-header>
+    <ion-toolbar class="toolbar_sidemenu">
+      <ion-title><img src="../../assets/img/profile.svg" alt="User Profile" width="100" /> </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list *ngFor="let menu of MENU" routerLink={{menu.path}} routerDirection="root">
+      <ion-item class="sidemenu_list"><span style=" color: #27ade3;"> <i class='fa fa-{{menu.icon}}'></i> </span> &nbsp; &nbsp; &nbsp; {{menu.title}}</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-router-outlet main></ion-router-outlet>
+
+
+<ion-content id="content">
+  <div class="main_home_parent">
+    <div class="main_home_first">
+      <div class="">
+        <div class="user_nav_top">
+          <ion-buttons slot="start" id="goback">
+            <ion-back-button defaultHref="/main-home" class="back-btn"></ion-back-button>
+          </ion-buttons>
+          <!--<div class="profile_name">-->
+            <!--Emmanuel Umeh-->
+            <!--<p> <span style="font-size: .8em; font-weight: bold;"> &#8358;20,000 </span> </p>-->
+          <!--</div>-->
+          <div class="tab_bar" (click)="openSideMenu()"> <img src="../../assets/img/bars.svg" width="50" alt="Bars" /> </div>
+        </div>
+      </div>
+    </div>
+    <div class="main_home_second_ss">
+      <div class="payment_content">
+        <h5><strong>Customer Plan</strong></h5>
+        <div class="contribution_plan_label">Weekly Contribution Plan</div>
+      </div>
+
+      <div class="payment_content">
+        <p>Enter Amount (&#8358;)</p>
+        <input class="form-control form-control-md input_style" name="amount" [(ngModel)]="amount" type="number" placeholder="Enter Amount">
+      </div>
+
+      <div class="payment_content">
+        <div class="btn_dark_blue" (click) = "makePayment()"> Pay </div>
+      </div>
+    </div>
+    <div class="main_home_third">
+      <span>Make Payment</span>
+    </div>
+
+  </div>
+</ion-content>

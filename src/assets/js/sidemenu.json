@@ -1,0 +1,27 @@
+[
+     {
+       "title": "Edit Profile",
+       "path": "../profile",
+       "icon": "edit"
+     },
+     {
+         "title": "Payment History",
+         "path": "../profile",
+         "icon": "history"
+     },
+     {
+         "title": "Register",
+         "path": "../register",
+         "icon": "check"
+     },
+     {
+         "title": "Settings",
+         "path": "../profile",
+         "icon": "cog"
+     },
+     {
+         "title": "Contact Support",
+         "path": "../profile",
+         "icon": "question-circle"
+     }
+ ]

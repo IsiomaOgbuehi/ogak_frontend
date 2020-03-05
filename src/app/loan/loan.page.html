@@ -1,0 +1,60 @@
+
+<ion-menu side="end" menuId="first" content-id="content" class="sidemenu">
+  <ion-header>
+    <ion-toolbar class="toolbar_sidemenu">
+      <ion-title><img src="../../assets/img/profile.svg" alt="User Profile" width="100" /> </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list *ngFor="let menu of MENU">
+      <ion-item class="sidemenu_list"><span style=" color: #27ade3;"> <i class='fa fa-{{menu.icon}}'></i> </span> &nbsp; &nbsp; &nbsp; {{menu.title}}</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-router-outlet main></ion-router-outlet>
+
+
+<ion-content id="content">
+  <div class="main_home_parent">
+    <div class="main_home_first">
+      <div class="">
+        <div class="user_nav_top">
+          <ion-buttons slot="start" id="goback">
+            <ion-back-button defaultHref="/main-home" class="back-btn"></ion-back-button>
+          </ion-buttons>
+          <!--<div class="profile_name">-->
+          <!--Emmanuel Umeh-->
+          <!--<p> <span style="font-size: .8em; font-weight: bold;"> &#8358;20,000 </span> </p>-->
+          <!--</div>-->
+          <div class="tab_bar" (click)="openSideMenu()"> <img src="../../assets/img/bars.svg" width="50" alt="Bars" /> </div>
+        </div>
+      </div>
+    </div>
+    <div class="main_home_second_ss">
+      <div style="margin-bottom: 5vh;"> <h5> <strong> Loan Options </strong> </h5> </div>
+
+      <div class="home_menu_btn" routerLink="../loan-application" routerDirection="root">
+        <div class="home_menu_btn_text">
+          <div> Daily Plan </div>
+        </div>
+        <div class="home_menu_btn_chevron"> <i class="fa fa-chevron-right"></i> </div>
+      </div>
+      <div class="home_menu_btn" routerLink="../loan-application" routerDirection="root">
+        <div class="home_menu_btn_text">
+          <div> Weekly Plan </div>
+        </div>
+        <div class="home_menu_btn_chevron"> <i class="fa fa-chevron-right"></i> </div>
+      </div>
+      <div class="home_menu_btn" routerLink="../loan-application" routerDirection="root">
+        <div class="home_menu_btn_text">
+          <div> Monthly Plan </div>
+        </div>
+        <div class="home_menu_btn_chevron"> <i class="fa fa-chevron-right"></i> </div>
+      </div>
+    </div>
+    <div class="main_home_third">
+      <span> Apply for Loan </span>
+    </div>
+  </div>
+</ion-content>

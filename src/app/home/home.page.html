@@ -1,14 +1,17 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  <div class="ion-padding home_main">
+    <div class="home_logo">
+      <img src="../../assets/img/logo.svg" alt="Logo" />
+    </div>
+    <div class="home_form">
+      <form>
+        <input onKeyPress="if(this.value.length==11) return false;"
+               name="password" [(ngModel)]="password" class="form-control form-control-md input_style" type="number" max="4" placeholder="Enter PIN">
+        <div class="btn_dark_blue" (click) = "loginUser()"> Login </div>
+      </form>
+    </div>
+    <div class="home_footer">
+      <div class="btn_trans" routerLink="../main-home" routerDirection="root"> Continue &nbsp; <i class="fa fa-arrow-right"></i></div>
+    </div>
   </div>
 </ion-content>

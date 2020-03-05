@@ -1,0 +1,51 @@
+
+<ion-menu side="end" menuId="first" content-id="content" class="sidemenu">
+  <ion-header>
+    <ion-toolbar class="toolbar_sidemenu">
+      <ion-title><img src="../../assets/img/profile.svg" alt="User Profile" width="100" /> </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list *ngFor="let menu of MENU">
+      <ion-item class="sidemenu_list"><span style=" color: #27ade3;"> <i class='fa fa-{{menu.icon}}'></i> </span> &nbsp; &nbsp; &nbsp; {{menu.title}}</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-router-outlet main></ion-router-outlet>
+
+
+<ion-content id="content">
+  <div class="">
+    <div class="main_home_first" style="padding-top: 3%;">
+      <div class="">
+        <div class="user_nav_top">
+          <ion-buttons slot="start" id="goback">
+            <ion-back-button defaultHref="/business-boost" class="back-btn"></ion-back-button>
+          </ion-buttons>
+          <!--<div class="profile_name">-->
+          <!--Emmanuel Umeh-->
+          <!--<p> <span style="font-size: .8em; font-weight: bold;"> &#8358;20,000 </span> </p>-->
+          <!--</div>-->
+          <div class="tab_bar" (click)="openSideMenu()"> <img src="../../assets/img/bars.svg" width="50" alt="Bars" /> </div>
+        </div>
+      </div>
+    </div>
+    <div class="main_home_second_bb" style="margin-top: 5vh;">
+      <div class="boost_img"> <img src="../../assets/img/refridge.svg" width="250" alt="Equipment" /> </div>
+      <div class="boost_text" style="padding: 2em;">
+        <div>Item: <strong>Chest Freezer</strong></div>
+        <div>Product: <strong>Themocool DF10</strong></div>
+        <div>Warranty: <strong>1 Year</strong></div>
+        <div class="product_price">&#8358;75,000</div>
+
+        <div class="payment_content" style="margin-top: 8vh;">
+          <div class="btn_dark_blue"> Apply </div>
+        </div>
+      </div>
+    </div>
+    <!--<div class="main_home_third">-->
+    <!--<span> Business Boost </span>-->
+    <!--</div>-->
+  </div>
+</ion-content>

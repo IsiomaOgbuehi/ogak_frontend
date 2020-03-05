@@ -1,5 +1,7 @@
 {
   "name": "ogak",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,0 +1,100 @@
+<ion-menu side="end" menuId="first" content-id="content" class="sidemenu">
+  <ion-header>
+    <ion-toolbar class="toolbar_sidemenu">
+      <ion-title><img src="../../assets/img/profile.svg" alt="User Profile" width="100" /> </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list *ngFor="let menu of MENU">
+      <ion-item class="sidemenu_list"><span style=" color: #27ade3;"> <i class='fa fa-{{menu.icon}}'></i> </span> &nbsp; &nbsp; &nbsp; {{menu.title}}</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-router-outlet main></ion-router-outlet>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" id="goback">
+      <ion-back-button defaultHref="/main-home" class="back-btn"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+    <ion-buttons slot="end" id="goback">
+      <div class="tab_bar" (click)="openSideMenu()"> <img src="../../assets/img/bars.svg" width="50" alt="Bars" /> </div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_body">
+    <form>
+    <div class="reg_form">
+        <div class="form_label">First Name</div>
+        <input class="form-control form-control-md input_style" type="text" name="firstName" [(ngModel)]="userData.firstName">
+    </div>
+
+    <div class="reg_form">
+        <div class="form_label">Last Name</div>
+        <input class="form-control form-control-md input_style" type="text" name="lastName" [(ngModel)]="userData.lastName">
+    </div>
+
+    <div class="reg_form">
+        <div class="form_label">Email</div>
+        <input class="form-control form-control-md input_style" type="email" name="email" [(ngModel)]="userData.email">
+    </div>
+
+    <div class="reg_form">
+        <div class="form_label">Phone</div>
+        <input class="form-control form-control-md input_style" type="number" name="phone" [(ngModel)]="userData.phone">
+    </div>
+
+    <div class="reg_form">
+        <div class="form_label">State</div>
+        <select class="form-control form-control-md input_style" name="state" [(ngModel)]="userData.state">
+          <option value="Rivers">Rivers</option>
+        </select>
+    </div>
+
+    <div class="reg_form">
+        <div class="form_label">State</div>
+        <select class="form-control form-control-md input_style" name="lga" [(ngModel)]="userData.lga">
+          <option value="Rivers">LGA</option>
+        </select>
+    </div>
+
+    <div class="reg_form">
+        <div class="form_label">Home Address</div>
+        <input class="form-control form-control-md input_style" type="text" name="homeAddress" [(ngModel)]="userData.homeAddress">
+    </div>
+
+    <div class="reg_form">
+        <div class="form_label">Business Address</div>
+        <input class="form-control form-control-md input_style" type="text" name="businessAddress" [(ngModel)]="userData.businessAddress">
+    </div>
+
+    <div class="reg_form">
+        <div class="form_label">Gender</div>
+        <label for="male" class="mr-5"><input class="input_style" [(ngModel)]="userData.gender" type="radio" name="gender" id="male" value="male"> <span class="label_font ml-2"> Male</span> </label>
+      <label for="female"><input class="input_style" [(ngModel)]="userData.gender" type="radio" name="gender" id="female" value="female"> <span class="label_font ml-2"> Female </span></label>
+    </div>
+
+    <div class="reg_form">
+      <div class="form_label">Loan Category</div>
+      <select class="form-control form-control-md input_style" name="loanCategory" [(ngModel)]="userData.loanCategory">
+        <option value="Rivers">Weekly</option>
+      </select>
+    </div>
+
+    <!--<div class="reg_form">-->
+      <!--<div class="form_label">Image of Utility Bill</div>-->
+      <!--<div class="utility_cam">-->
+          <!--<span class="fa fa-camera"></span>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div class="payment_content mt-2">
+      <div class="btn_dark_submit" (click)="submitData()"> Submit </div>
+    </div>
+    </form>
+  </div>
+</ion-content>
